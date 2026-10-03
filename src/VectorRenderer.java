@@ -1,6 +1,4 @@
-package SDP_A3;
-
-public class VectorRenderer implements Renderer{
+public class VectorRenderer implements Renderer {
     @Override
     public String renderCircle(int radius) {
         return "VECTOR circle radius=" + radius;

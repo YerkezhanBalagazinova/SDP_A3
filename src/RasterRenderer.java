@@ -1,6 +1,4 @@
-package SDP_A3;
-
-public class RasterRenderer implements Renderer{
+public class RasterRenderer implements Renderer {
     @Override
     public String renderCircle(int radius) {
         return "RASTER circle radius=" + radius;

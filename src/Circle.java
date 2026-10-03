@@ -1,6 +1,4 @@
-package SDP_A3;
-
-public class Circle extends Shape{
+public class Circle extends Shape {
     private int radius;
 
     public Circle(String id, int radius, Renderer renderer) {

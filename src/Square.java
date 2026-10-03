@@ -1,6 +1,4 @@
-package SDP_A3;
-
-public class Square extends Shape{
+public class Square extends Shape {
     private int side;
 
     public Square(String id, int side, Renderer renderer) {

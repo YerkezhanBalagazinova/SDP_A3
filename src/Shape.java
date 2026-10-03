@@ -1,5 +1,3 @@
-package SDP_A3;
-
 public abstract class Shape {
     protected String id;
     protected Renderer renderer;
