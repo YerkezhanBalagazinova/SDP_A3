@@ -9,9 +9,8 @@ public class Main {
     public static void runDemo() {
 
         int passed = 0;
-        int total = 5;
+        int total = 7;
 
-        // T1: Circle + VectorRenderer
         Circle circle1 = new Circle("C1", 2, new VectorRenderer());
 
         String actual1 = circle1.execute();
@@ -25,7 +24,6 @@ public class Main {
         }
 
 
-        // T2: Circle + RasterRenderer
         Circle circle2 = new Circle("C2", 2, new RasterRenderer());
 
         String actual2 = circle2.execute();
@@ -38,8 +36,6 @@ public class Main {
             System.out.println("T2 FAIL | expected=" + expected2 + " | actual=" + actual2);
         }
 
-
-        // T3: Square + VectorRenderer
         Square square1 = new Square("S1", 3, new VectorRenderer());
 
         String actual3 = square1.execute();
@@ -53,7 +49,6 @@ public class Main {
         }
 
 
-        // T4: Square + RasterRenderer
         Square square2 = new Square("S2", 3, new RasterRenderer());
 
         String actual4 = square2.execute();
@@ -67,7 +62,7 @@ public class Main {
         }
 
 
-        // T5: Change implementation on the same object
+
         Circle switchCircle = new Circle("C3", 2, new VectorRenderer());
 
         Circle originalReference = switchCircle;
@@ -109,6 +104,30 @@ public class Main {
             System.out.println("T5 FAIL");
         }
 
+        Circle circle3 = new Circle("C4", 2, new AsciiRenderer());
+
+        String actual6 = circle3.execute();
+        String expected6 = "ASCII circle radius=2";
+
+        if (actual6.equals(expected6)) {
+            System.out.println("T6 PASS | Circle + AsciiRenderer | result=" + actual6);
+            passed++;
+        } else {
+            System.out.println("T6 FAIL | expected=" + expected6 + " | actual=" + actual6);
+        }
+
+
+        Square square3 = new Square("S3", 3, new AsciiRenderer());
+
+        String actual7 = square3.execute();
+        String expected7 = "ASCII square side=3";
+
+        if (actual7.equals(expected7)) {
+            System.out.println("T7 PASS | Square + AsciiRenderer | result=" + actual7);
+            passed++;
+        } else {
+            System.out.println("T7 FAIL | expected=" + expected7 + " | actual=" + actual7);
+        }
 
         System.out.println("SUMMARY: " + passed + "/" + total + " PASS");
     }
